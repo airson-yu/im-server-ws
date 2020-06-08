@@ -2,6 +2,7 @@ package cc.airson.im.server.ws.controller;
 
 import cc.airson.im.server.ws.config.Const;
 import cc.airson.im.server.ws.handler.WebSocketHandler;
+import cc.airson.im.server.ws.handler.WebSocketHandlerSimple;
 import cc.airson.im.server.ws.vo.Message;
 import cc.airson.im.server.ws.vo.UserSession;
 import com.alibaba.druid.util.StringUtils;
@@ -39,10 +40,10 @@ import static cc.airson.im.server.ws.handler.WebSocketHandler.close;
 @Component
 public class WebSocketServer {
 
-    private static WebSocketHandler handler;
+    private static WebSocketHandlerSimple handler;
 
     @Autowired
-    public void setWebSocketHandler(WebSocketHandler handler) {
+    public void setWebSocketHandler(WebSocketHandlerSimple handler) {
         this.handler = handler;
     }
 
@@ -76,7 +77,7 @@ public class WebSocketServer {
      */
     @OnMessage
     public void onMessage(String message, Session session) {
-        logger.debug("message:{}", message);
+        //logger.debug("message:{}", message);
         handler.onMessage(message, session);
     }
 

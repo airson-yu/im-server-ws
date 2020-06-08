@@ -12,16 +12,19 @@
     <artifactId>im-server-ws</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>im-server-ws</name>
+    <packaging>war</packaging>
     <description>WebSocket Server of IM Project</description>
 
     <properties>
         <java.version>13</java.version>
+        <skipTests>true</skipTests>
         <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
         <mysql-connector.version>8.0.17</mysql-connector.version>
         <fastjson.version>1.2.62</fastjson.version>
         <druid.version>1.1.21</druid.version>
         <swagger.version>2.9.2</swagger.version>
         <commons-codec.version>1.13</commons-codec.version>
+        <commons-lang3.version>3.6</commons-lang3.version>
         <!--<hibernate-validator.version>6.1.0.Final</hibernate-validator.version>-->
     </properties>
 
@@ -66,6 +69,12 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-messaging</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
         </dependency>
 
         <dependency>
@@ -152,6 +161,7 @@
     </dependencyManagement>
 
     <build>
+        <finalName>ws</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
