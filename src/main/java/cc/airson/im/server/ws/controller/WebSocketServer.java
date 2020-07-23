@@ -1,29 +1,15 @@
 package cc.airson.im.server.ws.controller;
 
-import cc.airson.im.server.ws.config.Const;
-import cc.airson.im.server.ws.handler.WebSocketHandler;
 import cc.airson.im.server.ws.handler.WebSocketHandlerSimple;
-import cc.airson.im.server.ws.vo.Message;
-import cc.airson.im.server.ws.vo.UserSession;
-import com.alibaba.druid.util.StringUtils;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
-import java.io.IOException;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.CopyOnWriteArraySet;
-import java.util.concurrent.atomic.AtomicInteger;
-
-import static cc.airson.im.server.ws.handler.WebSocketHandler.close;
 
 /**
  * TODO

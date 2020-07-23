@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
+        <version>2.3.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cc.airson.im</groupId>
@@ -16,16 +16,16 @@
     <description>WebSocket Server of IM Project</description>
 
     <properties>
-        <java.version>13</java.version>
+        <java.version>14</java.version>
         <skipTests>true</skipTests>
-        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
-        <mysql-connector.version>8.0.17</mysql-connector.version>
-        <fastjson.version>1.2.62</fastjson.version>
-        <druid.version>1.1.21</druid.version>
-        <swagger.version>2.9.2</swagger.version>
-        <commons-codec.version>1.13</commons-codec.version>
-        <commons-lang3.version>3.6</commons-lang3.version>
-        <!--<hibernate-validator.version>6.1.0.Final</hibernate-validator.version>-->
+        <spring-cloud.version>Hoxton.SR6</spring-cloud.version>
+        <mysql-connector.version>8.0.20</mysql-connector.version>
+        <fastjson.version>1.2.72</fastjson.version>
+        <druid.version>1.1.23</druid.version>
+        <swagger.version>2.10.5</swagger.version>
+        <commons-codec.version>1.14</commons-codec.version>
+        <commons-lang3.version>3.10</commons-lang3.version>
+        <hibernate-validator.version>6.1.5.Final</hibernate-validator.version>
     </properties>
 
     <dependencies>
@@ -122,6 +122,13 @@
             <version>${druid.version}</version>
         </dependency>
 
+        <!-- https://blog.csdn.net/qq_33547169/article/details/106980475 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-spring-webmvc</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
@@ -140,11 +147,11 @@
             <version>${commons-codec.version}</version>
         </dependency>
 
-        <!--<dependency>
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>${hibernate-validator.version}</version>
-        </dependency>-->
+        </dependency>
 
     </dependencies>
 
