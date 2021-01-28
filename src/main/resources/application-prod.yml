@@ -13,8 +13,8 @@ mybatis:
         log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
     type-aliases-package: cc.airson.im.server.ws.dao.po
 spring:
-    profiles:
-        active: dev
+    application:
+        name: im-server-ws
     datasource:
         druid:
             name: im-server-ws
@@ -76,14 +76,24 @@ spring:
     redis:
         client-name: im-server-ws
         database: 0
-        host: ${custom.server1}
-        port: 6379
+        #host: ${custom.server1}
+        #port: 6379
         password: vfr47ujm
+        cluster:
+            nodes:
+                - ${custom.server1}:6380
+                - ${custom.server1}:6381
+                - ${custom.server1}:6382
+                - ${custom.server2}:6380
+                - ${custom.server2}:6381
+                - ${custom.server2}:6382
+            max-redirects: 4
         lettuce:
             pool:
                 min-idle: 0
                 max-idle: 8
                 max-wait: 1ms
+                max-active: 10
     thymeleaf:
         enabled: false
         cache: false
@@ -109,20 +119,3 @@ eureka:
     client:
         serviceUrl:
             defaultZone: ${custom.eureka1},${custom.eureka2},${custom.eureka3},${custom.eureka4}
-
----
-custom:
-    server1: 172.81.216.81
-    server2: 175.24.103.167
-spring:
-    config:
-        activate:
-            on-profile: dev
----
-custom:
-    server1: 10.1.0.11
-    server2: 10.2.0.22
-spring:
-    config:
-        activate:
-            on-profile: prod
