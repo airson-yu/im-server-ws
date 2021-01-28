@@ -106,11 +106,11 @@ public class BaseTip {
 
     public static final String value_failure = "failure";
 
-    public static final String value_session_user        = "user";
-    public static final String value_status_failure      = "failure";
-    public static final String value_status_server_error = "status_server_error";
-    public static final String value_status_success      = "success";
-    public static final String value_success             = "success";
+    public static final String  value_session_user        = "user";
+    public static final String  value_status_failure      = "failure";
+    public static final String  value_status_server_error = "status_server_error";
+    public static final String  value_status_success      = "success";
+    public static final boolean value_success             = true;
 
     public static final String value_toLogin = "1";
 

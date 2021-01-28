@@ -12,7 +12,7 @@
     <artifactId>im-server-ws</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>im-server-ws</name>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <description>WebSocket Server of IM Project</description>
 
     <properties>
