@@ -180,7 +180,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>ws</finalName>
+        <!--<finalName>ws</finalName>-->
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
